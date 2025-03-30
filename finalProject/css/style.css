@@ -1,0 +1,50 @@
+/* Vista móvil (mobile-first) */
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  /* Media Query para tableta (772px) */
+  @media (min-width: 772px) {
+    body {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    figure {
+      border-radius: 50%;
+    }
+  
+    figure:last-child {
+      grid-column: span 2;
+    }
+  }
+  
+  /* Media Query para pantalla grande (992px) */
+  @media (min-width: 992px) {
+    figure:nth-child(3n) {
+      grid-column: span 2;
+    }
+  
+    figure {
+      border-radius: 0;
+    }
+  }
+  
+  /* Preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    figure {
+      background-color: #333;
+      color: #f0f0f0;
+      border: 1px solid #000;
+    }
+  }
+  
+  
